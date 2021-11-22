@@ -6,11 +6,21 @@
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 20:19:59 by jzeybel           #+#    #+#             */
-/*   Updated: 2021/11/16 14:26:40 by jzeybel          ###   ########.fr       */
+/*   Updated: 2021/11/22 13:54:35 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+t_list	*ft_lstnewprev(t_list *data, t_list *prev)
+{
+	t_list	*new;
+
+	new = ft_lstnew(data);
+	new->previous = prev;
+
+	return (new);
+}
 
 int	init_stack(t_stack *stack)
 {
@@ -21,7 +31,15 @@ int	init_stack(t_stack *stack)
 	return (0);
 }
 
-int	alloc_stack(t_stack *stack)
+int	alloc_stack(t_list *lst, int size)
 {
-	stack->a->data =
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		ft_lstaddback(lst, );
+		lst = lst->next;
+		i++;
+	}
 }
