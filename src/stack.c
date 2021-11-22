@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/27 13:38:20 by jzeybel           #+#    #+#             */
-/*   Updated: 2021/11/15 15:40:08 by jzeybel          ###   ########.fr       */
+/*   Created: 2021/11/13 20:19:59 by jzeybel           #+#    #+#             */
+/*   Updated: 2021/11/16 14:26:40 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include "libft.h"
-# include <limits.h>
-
-typedef struct	s_stack
+int	init_stack(t_stack *stack)
 {
-	t_list	*a;
-	t_list	*b;
-	int sizea;
-	int sizeb;
-}				t_stack;
+	stack->a = 0;
+	stack->b = 0;
+	stack->sizea = 0;
+	stack->sizeb = 0;
+	return (0);
+}
 
-int	checker(char **);
-int	init_doublons(char **av, int size);
-int	cmp_doublons(int *data, int size);
-int	init_stack(t_stack *);
-
-#endif
+int	alloc_stack(t_stack *stack)
+{
+	stack->a->data =
+}

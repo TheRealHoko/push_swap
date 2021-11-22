@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   error_handling.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/27 13:38:20 by jzeybel           #+#    #+#             */
-/*   Updated: 2021/11/15 15:40:08 by jzeybel          ###   ########.fr       */
+/*   Created: 2021/11/13 19:08:09 by jzeybel           #+#    #+#             */
+/*   Updated: 2021/11/13 19:19:00 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include "libft.h"
-# include <limits.h>
-
-typedef struct	s_stack
+int	error_handling(int errno, t_stack stacks)
 {
-	t_list	*a;
-	t_list	*b;
-	int sizea;
-	int sizeb;
-}				t_stack;
+	(void)stacks;
+	if (errno == 1)
+	{
 
-int	checker(char **);
-int	init_doublons(char **av, int size);
-int	cmp_doublons(int *data, int size);
-int	init_stack(t_stack *);
-
-#endif
+		return (1);
+	}
+	return(0);
+}

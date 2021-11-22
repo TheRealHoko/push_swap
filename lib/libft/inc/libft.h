@@ -6,7 +6,7 @@
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 18:10:10 by jzeybel           #+#    #+#             */
-/*   Updated: 2021/04/21 19:12:58 by jzeybel          ###   ########.fr       */
+/*   Updated: 2021/11/15 16:13:25 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct		s_list
 {
 	void			*data;
 	struct s_list	*next;
+	struct s_list	*previous;
 }					t_list;
 
 t_list				*ft_lstnew(void	*data);

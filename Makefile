@@ -4,9 +4,17 @@ CC = gcc
 
 CFLAGS = -Wall -Werror -Wextra
 
-INC = -I./inc
+DBRULE =
+
+INC =	-I./inc \
+		-I./lib/libft/inc/
+
+LIB = -L./lib/libft -lft
 
 SRC =	main.c \
+		parser.c \
+		stack.c \
+		error_handling.c \
 		instructions/sa.c
 
 TMP = tmp
@@ -14,28 +22,34 @@ TMP = tmp
 OBJ = $(addprefix $(TMP)/,$(SRC:.c=.o))
 
 $(NAME) : $(OBJ)
-	$(CC) $(CFLAGS) $(INC) -o $(NAME) $(OBJ)
+	make -C ./lib/libft $(DBRULE)
+	@echo Compiling : $<
+	@$(CC) $(CFLAGS) $(INC) -o $(NAME) $(OBJ) $(LIB)
 
+all : DBRULE += all
 all : $(NAME)
 
 $(TMP)/%.o : src/%.c
 	mkdir -p $(TMP)
 	mkdir -p $(TMP)/instructions
+	@echo Compiling : $<
 	@$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
 norm :
 	norminette .
 
 debug : CFLAGS += -g -fsanitize=address
+debug : DBRULE += debug
 debug : re
 debug :
 	./push_swap 1
 
 clean :
-	rm -f $(OBJ)
+	rm -rf $(TMP)
+	make -C ./lib/libft clean
 
 fclean : clean
-	rm -f push_swap
+	rm -f $(NAME)
 
 re : fclean $(NAME)
 

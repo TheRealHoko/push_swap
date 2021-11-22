@@ -6,7 +6,7 @@
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 13:36:43 by jzeybel           #+#    #+#             */
-/*   Updated: 2021/10/29 16:21:06 by jzeybel          ###   ########.fr       */
+/*   Updated: 2021/11/15 16:51:55 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,22 @@
 
 int	main(int ac, char **av)
 {
+	t_stack stack;
+
+	init_stack(&stack);
 	if (ac < 2)
 		printf("not enough arguments\n");
 	else
 	{
-		while (*av != 0)
+		if (checker(av) && init_doublons(av, ac - 1))
 		{
-			printf("%s\n", *av);
-			av++;
+			while (*(++av) != 0)
+				printf("%s\n", *av);
+		}
+		else
+		{
+			printf("Error\n");
+			return (1);
 		}
 		printf("enough args %s\n", av[-1]);
 	}
