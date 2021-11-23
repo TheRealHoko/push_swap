@@ -23,16 +23,16 @@ int	main(int ac, char **av)
 	{
 		if (checker(av) && init_doublons(av, ac - 1))
 		{
-			alloc_stack(stack.a, av);
-			while (*(++av) != 0)
-				printf("%s\n", *av);
+			alloc_stack(&(stack.a), av);
+			//while (*(++av) != 0)
+			//	printf("%s\n", *av);
+			//printf("enough args \n"/*, av[-1]*/);
 		}
 		else
 		{
 			printf("Error\n");
 			return (1);
 		}
-		printf("enough args %s\n", av[-1]);
 	}
 	return (0);
 }

@@ -28,6 +28,6 @@ int	checker(char **);
 int	init_doublons(char **av, int size);
 int	cmp_doublons(int *data, int size);
 int	init_stack(t_stack *);
-int	alloc_stack(t_list *lst, char **nums);
+int	alloc_stack(t_list **lst, char **nums);
 
 #endif

@@ -12,11 +12,24 @@
 
 #include "libft.h"
 
-void    ft_lstprint(t_list *lst)
+void    ft_lstprint(t_list *lst, char *param)
 {
-    while (lst)
+    if (ft_strnstr(param, "char", ft_strlen(param) + 1))
     {
-        printf("%s\n", (char *)lst->data);
-        lst = lst->next;
+        while (lst)
+        {
+            printf("%s\n", (char *)lst->data);
+            lst = lst->next;
+        }
     }
+    else if (ft_strnstr(param, "int", ft_strlen(param)))
+    {
+        while (lst)
+        {
+            printf("%d\n", *(int *)lst->data);
+            lst = lst->next;
+        }
+        
+    }
+    
 }

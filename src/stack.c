@@ -31,20 +31,28 @@ int	init_stack(t_stack *stack)
 	return (0);
 }
 
-int	alloc_stack(t_list *lst, char **nums)
+void	*ft_atolldup(char *num)
 {
-	ft_lstadd_back(&lst, ft_lstnewprev((void *)ft_atoll(*nums++), lst));
-	while (*nums && lst)
-	{
-		ft_lstadd_back(&lst, ft_lstnewprev((void *)ft_atoll(*nums++), lst));
-		printf("in loop\n");
-		lst = lst->next;
-	}
-	ft_lstclear(&lst, ft_del);
-	while (lst)
-	{
-		printf("",);
-	}
+	void	*ptr;
+	int		i;
 
+	i = ft_atoll(num);
+	ptr = malloc(sizeof(int));
+	if (!ptr)
+		return (NULL);
+	ft_memcpy(ptr, (unsigned char *)&(i), sizeof(int));
+	return (ptr);
+}
+
+int	alloc_stack(t_list **lst, char **nums)
+{
+	while (*(++nums))
+	{
+		ft_lstadd_back(lst, ft_lstnew(ft_atolldup(*nums)));
+		printf("in loop\n");
+	}
+	ft_lstprint(*lst, "int");
+	ft_lstclear(lst, ft_del);
+	//ft_lstprint(lst);
 	return (0);
 }
