@@ -6,13 +6,13 @@
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 20:19:59 by jzeybel           #+#    #+#             */
-/*   Updated: 2021/11/22 13:54:35 by jzeybel          ###   ########.fr       */
+/*   Updated: 2021/11/22 21:37:38 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*ft_lstnewprev(t_list *data, t_list *prev)
+t_list	*ft_lstnewprev(void *data, t_list *prev)
 {
 	t_list	*new;
 
@@ -31,15 +31,20 @@ int	init_stack(t_stack *stack)
 	return (0);
 }
 
-int	alloc_stack(t_list *lst, int size)
+int	alloc_stack(t_list *lst, char **nums)
 {
-	int	i;
-
-	i = 0;
-	while (i < size)
+	ft_lstadd_back(&lst, ft_lstnewprev((void *)ft_atoll(*nums++), lst));
+	while (*nums && lst)
 	{
-		ft_lstaddback(lst, );
+		ft_lstadd_back(&lst, ft_lstnewprev((void *)ft_atoll(*nums++), lst));
+		printf("in loop\n");
 		lst = lst->next;
-		i++;
 	}
+	ft_lstclear(&lst, ft_del);
+	while (lst)
+	{
+		printf("",);
+	}
+
+	return (0);
 }

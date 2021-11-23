@@ -6,7 +6,7 @@
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 13:36:43 by jzeybel           #+#    #+#             */
-/*   Updated: 2021/11/15 16:51:55 by jzeybel          ###   ########.fr       */
+/*   Updated: 2021/11/22 18:26:20 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	main(int ac, char **av)
 	{
 		if (checker(av) && init_doublons(av, ac - 1))
 		{
+			alloc_stack(stack.a, av);
 			while (*(++av) != 0)
 				printf("%s\n", *av);
 		}
