@@ -23,16 +23,18 @@ int	main(int ac, char **av)
 	{
 		if (checker(av) && init_doublons(av, ac - 1))
 		{
-			alloc_stack(&(stack.a), av);
-			//while (*(++av) != 0)
-			//	printf("%s\n", *av);
-			//printf("enough args \n"/*, av[-1]*/);
+			alloc_stack(&(stack.a), ac - 1);
+			create_stack(stack.a, av);
+			printf("\n-------\n");
+			ft_lstprint(stack.a, "int");
+			printf("-------\n");
 		}
 		else
 		{
 			printf("Error\n");
 			return (1);
 		}
+		ft_lstclear(&stack.a, ft_del);
 	}
 	return (0);
 }

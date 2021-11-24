@@ -96,7 +96,7 @@ mktmp :
 	mkdir -p $(TMP)/str
 	mkdir -p $(TMP)/std
 
-debug : CFLAGS += -g
+debug : CFLAGS += -g -fsanitize=address
 debug : all
 
 $(TMP)/%.o : $(SRC_DIR)/%.c

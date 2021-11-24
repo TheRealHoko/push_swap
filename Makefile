@@ -23,8 +23,7 @@ OBJ = $(addprefix $(TMP)/,$(SRC:.c=.o))
 
 $(NAME) : $(OBJ)
 	make -C ./lib/libft $(DBRULE)
-	@echo Compiling : $<
-	@$(CC) $(CFLAGS) $(INC) -o $(NAME) $(OBJ) $(LIB)
+	$(CC) $(CFLAGS) $(INC) -o $(NAME) $(OBJ) $(LIB)
 
 all : DBRULE += all
 all : $(NAME)
@@ -32,8 +31,7 @@ all : $(NAME)
 $(TMP)/%.o : src/%.c
 	mkdir -p $(TMP)
 	mkdir -p $(TMP)/instructions
-	@echo Compiling : $<
-	@$(CC) $(CFLAGS) $(INC) -c $< -o $@
+	$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
 norm :
 	norminette .
