@@ -6,7 +6,7 @@
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 20:19:59 by jzeybel           #+#    #+#             */
-/*   Updated: 2021/11/22 21:37:38 by jzeybel          ###   ########.fr       */
+/*   Updated: 2021/11/24 21:12:45 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,7 @@ int	init_stack(t_stack *stack)
 void	*ft_alloc_int(void)
 {
 	void	*ptr;
-	int		i;
 
-	i = 0;
 	ptr = malloc(sizeof(int));
 	if (!ptr)
 		return (NULL);
@@ -57,11 +55,9 @@ int	create_stack(t_list *lst, char **av)
 
 	while (*(++av))
 	{
-
 		i = ft_atoll(*av);
 		ft_memcpy(lst->data, &i, sizeof(int));
 		lst = lst->next;
 	}
 	return (0);
-	
 }
