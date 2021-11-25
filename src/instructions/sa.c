@@ -12,7 +12,13 @@
 
 #include "push_swap.h"
 
-void	sa(void)
+void	ft_sa(t_list **lst)
 {
-	printf("foo");
+	if (!(*lst)->data)
+		return ;
+	else if ((*lst)->data && !(*lst)->next->data)
+		return ;
+	*lst = (*lst)->next;
+	(*lst)->next = (*lst)->next->next;
+	printf("sa\n");
 }

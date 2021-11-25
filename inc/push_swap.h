@@ -30,5 +30,6 @@ int	cmp_doublons(int *data, int size);
 int	init_stack(t_stack *);
 int	alloc_stack(t_list **lst, int size);
 int	create_stack(t_list *lst, char **av);
+void	ft_sa(t_list **lsta);
 
 #endif

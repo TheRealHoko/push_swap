@@ -25,9 +25,12 @@ int	main(int ac, char **av)
 		{
 			alloc_stack(&(stack.a), ac - 1);
 			create_stack(stack.a, av);
-			printf("\n-------\n");
-			ft_lstprint(stack.a, "int");
-			printf("-------\n");
+			printf("\n----Before----\n\n");
+			ft_lstprint(stack.a, "node");
+			printf("\n\n----Instructions----\n\n");
+			ft_sa(&(stack.a));
+			printf("\n\n----After----\n\n");
+			ft_lstprint(stack.a, "node");
 		}
 		else
 		{
