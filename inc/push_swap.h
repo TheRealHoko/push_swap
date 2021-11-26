@@ -20,8 +20,6 @@ typedef struct	s_stack
 {
 	t_list	*a;
 	t_list	*b;
-	int sizea;
-	int sizeb;
 }				t_stack;
 
 int	checker(char **);
@@ -30,6 +28,17 @@ int	cmp_doublons(int *data, int size);
 int	init_stack(t_stack *);
 int	alloc_stack(t_list **lst, int size);
 int	create_stack(t_list *lst, char **av);
-void	ft_sa(t_list **lsta);
+void	*ft_alloc_int(void);
+void	ft_sa(t_list **lst);
+void	ft_sb(t_list **lst);
+void	ft_ss(t_stack *stack);
+void	ft_pa(t_list **lsta, t_list **lstb);
+void	ft_pb(t_list **lstb, t_list **lsta);
+void	ft_ra(t_list **lst);
+void	ft_rb(t_list **lst);
+void	ft_rr(t_stack *stack);
+void	ft_rra(t_list **lst);
+void	ft_rrb(t_list **lst);
+void	ft_rrr(t_stack *stack);
 
 #endif

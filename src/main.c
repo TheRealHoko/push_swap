@@ -23,14 +23,20 @@ int	main(int ac, char **av)
 	{
 		if (checker(av) && init_doublons(av, ac - 1))
 		{
-			alloc_stack(&(stack.a), ac - 1);
+			alloc_stack(&stack.a, ac - 1);
 			create_stack(stack.a, av);
-			printf("\n----Before----\n\n");
+
+			printf("\n----STACK A----\n\n");
 			ft_lstprint(stack.a, "node");
+			printf("\n----STACK B----\n\n");
+			ft_lstprint(stack.b, "node");
+
 			printf("\n\n----Instructions----\n\n");
-			ft_sa(&(stack.a));
-			printf("\n\n----After----\n\n");
+			ft_rra(&stack.a);
+			printf("\n\n----STACK A after----\n\n");
 			ft_lstprint(stack.a, "node");
+			printf("\n\n----STACK B after----\n\n");
+			ft_lstprint(stack.b, "node");
 		}
 		else
 		{
@@ -38,6 +44,7 @@ int	main(int ac, char **av)
 			return (1);
 		}
 		ft_lstclear(&stack.a, ft_del);
+		ft_lstclear(&stack.b, ft_del);
 	}
 	return (0);
 }

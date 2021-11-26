@@ -34,12 +34,9 @@ static  void PrintNode(t_list *lst)
 {
     while (lst)
     {
-        printf("\n");
-        if (lst->previous)
-            printf("Previous : %d\n", *(int *)lst->previous->data);
-        printf("Current : %d\n", *(int *)lst->data);
+        printf("Current :%d (%p)\n", *(int *)lst->data, lst);
         if (lst->next)
-            printf("Next : %d\n", *(int *)lst->next->data);
+            printf("Next :%d (%p)\n", *(int *)lst->next->data, lst->next);
         printf("\n");
         lst = lst->next;
     }
@@ -47,7 +44,9 @@ static  void PrintNode(t_list *lst)
 
 void    ft_lstprint(t_list *lst, char *param)
 {
-    if (ft_strnstr(param, "str", ft_strlen(param)))
+    if (!lst)
+        return ;
+    else if (ft_strnstr(param, "str", ft_strlen(param)))
         PrintStr(lst);
     else if (ft_strnstr(param, "int", ft_strlen(param)))
         PrintInt(lst);
