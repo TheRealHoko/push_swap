@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	ft_sa(t_list **lst)
+void	ft_sa(t_list **lst, int i)
 {
 	void	*tmp;
 
@@ -22,10 +22,11 @@ void	ft_sa(t_list **lst)
 	tmp = (*lst)->data;
 	(*lst)->data = (*lst)->next->data;
 	(*lst)->next->data = tmp;
-	printf("sa\n");
+	if (i)
+		printf("sa\n");
 }
 
-void	ft_sb(t_list **lst)
+void	ft_sb(t_list **lst, int i)
 {
 	void	*tmp;
 
@@ -35,13 +36,14 @@ void	ft_sb(t_list **lst)
 	tmp = (*lst)->data;
 	(*lst)->data = (*lst)->next->data;
 	(*lst)->next->data = tmp;
-	printf("sb\n");
+	if (i)
+		printf("sb\n");
 }
 
 void	ft_ss(t_stack *stack)
 {
-	ft_sa(&stack->a);
-	ft_sb(&stack->b);
+	ft_sa(&stack->a, 0);
+	ft_sb(&stack->b, 0);
 	printf("ss\n");
 }
 
@@ -81,7 +83,7 @@ void	ft_pb(t_list **lstb, t_list **lsta)
 	printf("pb\n");
 }
 
-void	ft_ra(t_list **lst)
+void	ft_ra(t_list **lst, int i)
 {
 	t_list	*tmp;
 	t_list	*tmp2;
@@ -95,10 +97,11 @@ void	ft_ra(t_list **lst)
 	(*lst)->next = 0;
 	tmp->next = *lst;
 	*lst = tmp2;
-	printf("ra\n");
+	if (i)
+		printf("ra\n");
 }
 
-void	ft_rb(t_list **lst)
+void	ft_rb(t_list **lst, int i)
 {
 	t_list	*tmp;
 	t_list	*tmp2;
@@ -112,25 +115,28 @@ void	ft_rb(t_list **lst)
 	(*lst)->next = 0;
 	tmp->next = *lst;
 	*lst = tmp2;
-	printf("rb\n");
+	if (i)
+		printf("rb\n");
 }
 
 void	ft_rr(t_stack *stack)
 {
-	ft_ra(&stack->a);
-	ft_rb(&stack->b);
+	ft_ra(&stack->a, 0);
+	ft_rb(&stack->b, 0);
 	printf("rr\n");
 }
 
-void	ft_rra(t_list **lst)
+void	ft_rra(t_list **lst, int i)
 {
 	t_list	*tmp;
 	t_list	*tmp2;
 
-	tmp = *lst;
-	tmp2 = ft_lstlast(*lst);
+	tmp = 0;
+	tmp2 = 0;
 	if (!(*lst)->next)
 		return ;
+	tmp = *lst;
+	tmp2 = ft_lstlast(*lst);
 	while (*lst)
 	{
 		if ((*lst)->next == ft_lstlast(*lst))
@@ -142,18 +148,21 @@ void	ft_rra(t_list **lst)
 	}
 	*lst = tmp2;
 	(*lst)->next = tmp;
-	printf("rra\n");
+	if (i)
+		printf("rra\n");
 }
 
-void	ft_rrb(t_list **lst)
+void	ft_rrb(t_list **lst, int i)
 {
 	t_list	*tmp;
 	t_list	*tmp2;
 
-	tmp = *lst;
-	tmp2 = ft_lstlast(*lst);
+	tmp = 0;
+	tmp2 = 0;
 	if (!(*lst)->next)
 		return ;
+	tmp = *lst;
+	tmp2 = ft_lstlast(*lst);
 	while (*lst)
 	{
 		if ((*lst)->next == ft_lstlast(*lst))
@@ -165,12 +174,13 @@ void	ft_rrb(t_list **lst)
 	}
 	*lst = tmp2;
 	(*lst)->next = tmp;
-	printf("rrb\n");
+	if (i)
+		printf("rrb\n");
 }
 
 void	ft_rrr(t_stack *stack)
 {
-	ft_rra(&stack->a);
-	ft_rrb(&stack->b);
+	ft_rra(&stack->a, 0);
+	ft_rrb(&stack->b, 0);
 	printf("rrr\n");
 }

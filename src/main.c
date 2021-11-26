@@ -32,7 +32,9 @@ int	main(int ac, char **av)
 			ft_lstprint(stack.b, "node");
 
 			printf("\n\n----Instructions----\n\n");
-			ft_rra(&stack.a);
+			ft_pb(&stack.b, &stack.a);
+			ft_rrr(&stack);
+
 			printf("\n\n----STACK A after----\n\n");
 			ft_lstprint(stack.a, "node");
 			printf("\n\n----STACK B after----\n\n");
