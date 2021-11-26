@@ -14,11 +14,21 @@
 
 void	ft_sa(t_list **lst)
 {
-	if (!(*lst)->data)
+	t_list	*current;
+	t_list	*next;
+
+	current = 0;
+	next = 0;
+	if (!(*lst))
 		return ;
-	else if ((*lst)->data && !(*lst)->next->data)
+	else if (!(*lst)->next)
 		return ;
-	*lst = (*lst)->next;
-	(*lst)->next = (*lst)->next->next;
+	current = (*lst)->next;
+	next = *lst;
+	current->previous = 0;
+	next->next = current->next;
+	next->previous = current->previous;
+	current->next = next;
+	*lst = current;
 	printf("sa\n");
 }

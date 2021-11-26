@@ -47,7 +47,7 @@ static  void PrintNode(t_list *lst)
 
 void    ft_lstprint(t_list *lst, char *param)
 {
-    if (ft_strnstr(param, "str", ft_strlen(param) + 1))
+    if (ft_strnstr(param, "str", ft_strlen(param)))
         PrintStr(lst);
     else if (ft_strnstr(param, "int", ft_strlen(param)))
         PrintInt(lst);

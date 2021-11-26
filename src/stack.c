@@ -45,7 +45,7 @@ void	*ft_alloc_int(void)
 int	alloc_stack(t_list **lst, int size)
 {
 	size--;
-	ft_lstadd_back(lst, ft_lstnew(ft_alloc_int()));
+	ft_lstadd_back(lst, ft_lstnewprev(ft_alloc_int(), ft_lstnew(ft_alloc_int())));
 	while (size--)
 		ft_lstadd_back(lst, ft_lstnewprev(ft_alloc_int(), ft_lstlast(*lst)));
 	return (0);
