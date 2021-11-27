@@ -6,7 +6,7 @@
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 13:36:43 by jzeybel           #+#    #+#             */
-/*   Updated: 2021/11/22 18:26:20 by jzeybel          ###   ########.fr       */
+/*   Updated: 2021/11/27 02:21:34 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,19 @@ int	main(int ac, char **av)
 			create_stack(stack.a, av);
 
 			printf("\n----STACK A----\n\n");
-			ft_lstprint(stack.a, "node");
+			ft_lstprint(stack.a, "int");
 			printf("\n----STACK B----\n\n");
-			ft_lstprint(stack.b, "node");
+			ft_lstprint(stack.b, "int");
 
 			printf("\n\n----Instructions----\n\n");
+			ft_pb(&stack.b, &stack.a);
 			ft_pb(&stack.b, &stack.a);
 			ft_rrr(&stack);
 
 			printf("\n\n----STACK A after----\n\n");
-			ft_lstprint(stack.a, "node");
+			ft_lstprint(stack.a, "int");
 			printf("\n\n----STACK B after----\n\n");
-			ft_lstprint(stack.b, "node");
+			ft_lstprint(stack.b, "int");
 		}
 		else
 		{
