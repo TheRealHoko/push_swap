@@ -6,7 +6,7 @@
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 15:28:31 by jzeybel           #+#    #+#             */
-/*   Updated: 2021/11/27 02:19:46 by jzeybel          ###   ########.fr       */
+/*   Updated: 2021/11/27 13:28:19 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,7 +141,7 @@ int	ft_rra(t_list **lst, int i)
 
 	tmp = 0;
 	tmp2 = 0;
-	if (!(*lst))
+	if (!(*lst) || !(*lst)->next)
 		return (1);
 	tmp = *lst;
 	tmp2 = ft_lstlast(*lst);
@@ -168,7 +168,7 @@ int	ft_rrb(t_list **lst, int i)
 
 	tmp = 0;
 	tmp2 = 0;
-	if (!(*lst)->next)
+	if (!(*lst) || !(*lst)->next)
 		return (1);
 	tmp = *lst;
 	tmp2 = ft_lstlast(*lst);
