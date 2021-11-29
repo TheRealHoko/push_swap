@@ -6,7 +6,7 @@
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 13:38:20 by jzeybel           #+#    #+#             */
-/*   Updated: 2021/11/28 23:51:04 by jzeybel          ###   ########.fr       */
+/*   Updated: 2021/11/29 17:09:26 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,9 @@ void	ft_rr(t_stack *stack);
 int		ft_rra(t_list **lst, int i);
 int		ft_rrb(t_list **lst, int i);
 void	ft_rrr(t_stack *stack);
+int     ft_issorted(t_list *lst, int range);
+int     ft_easysort(t_stack *stack);
 int		ft_timsort(t_stack *stack, int size);
+int     ft_insertion_sort(t_stack *stack);
 
 #endif

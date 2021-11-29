@@ -6,7 +6,7 @@
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 13:36:43 by jzeybel           #+#    #+#             */
-/*   Updated: 2021/11/28 23:51:41 by jzeybel          ###   ########.fr       */
+/*   Updated: 2021/11/29 17:11:17 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 int	main(int ac, char **av)
 {
 	t_stack stack;
+	int		i;
 
+	i = 0;
 	init_stack(&stack);
 	if (ac < 2)
 		printf("not enough arguments\n");
@@ -32,10 +34,15 @@ int	main(int ac, char **av)
 			ft_lstprint(stack.b, "int");
 
 			printf("\n\n----Instructions----\n\n");
-			ft_timsort(&stack, ac - 1);
-
+			i = ft_issorted(stack.a, ac - 1);
+			if (i)
+				ft_easysort(&stack);
+			//ft_timsort(&stack, ac - 1);
+			
 			printf("\n\n----STACK A after----\n\n");
 			ft_lstprint(stack.a, "int");
+			i = ft_issorted(stack.a, ac - 1);
+			printf("Is the stack sorted :%s\n", (!i) ? "yes" : "no");
 			printf("\n\n----STACK B after----\n\n");
 			ft_lstprint(stack.b, "int");
 		}

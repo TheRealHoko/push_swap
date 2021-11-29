@@ -14,6 +14,7 @@ LIB = -L./lib/libft -lft
 SRC =	main.c \
 		parser.c \
 		stack.c \
+		sort.c \
 		error_handling.c \
 		instructions/sa.c
 
