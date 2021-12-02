@@ -6,7 +6,7 @@
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 13:36:43 by jzeybel           #+#    #+#             */
-/*   Updated: 2021/11/29 17:11:17 by jzeybel          ###   ########.fr       */
+/*   Updated: 2021/12/02 15:43:24 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,11 @@ int	main(int ac, char **av)
 
 			printf("\n\n----Instructions----\n\n");
 			i = ft_issorted(stack.a, ac - 1);
-			if (i)
+			ft_sa(&stack.a, 1);
+			if (i && (ac - 1 == 3))
 				ft_easysort(&stack);
 			//ft_timsort(&stack, ac - 1);
-			
+
 			printf("\n\n----STACK A after----\n\n");
 			ft_lstprint(stack.a, "int");
 			i = ft_issorted(stack.a, ac - 1);

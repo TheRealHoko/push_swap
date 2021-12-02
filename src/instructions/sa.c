@@ -6,7 +6,7 @@
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 15:28:31 by jzeybel           #+#    #+#             */
-/*   Updated: 2021/11/27 13:28:19 by jzeybel          ###   ########.fr       */
+/*   Updated: 2021/12/02 16:45:51 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,20 @@
 
 int	ft_sa(t_list **lst, int i)
 {
-	void	*tmp;
+	t_list	*tmp;
+	int		size;
 
 	tmp = 0;
+	size = ft_lstsize(*lst);
 	if (!*lst || !(*lst)->next)
 		return (1);
-	tmp = (*lst)->data;
-	(*lst)->data = (*lst)->next->data;
-	(*lst)->next->data = tmp;
+	tmp = *lst;
+	*lst = (*lst)->next;
+	if (size == 2)
+		tmp->next = NULL;
+	else
+		tmp->next = tmp->next->next;
+	(*lst)->next = tmp;
 	if (i)
 		printf("sa\n");
 	return (0);
@@ -29,14 +35,20 @@ int	ft_sa(t_list **lst, int i)
 
 int	ft_sb(t_list **lst, int i)
 {
-	void	*tmp;
+	t_list	*tmp;
+	int		size;
 
 	tmp = 0;
+	size = ft_lstsize(*lst);
 	if (!*lst || !(*lst)->next)
 		return (1);
-	tmp = (*lst)->data;
-	(*lst)->data = (*lst)->next->data;
-	(*lst)->next->data = tmp;
+	tmp = *lst;
+	*lst = (*lst)->next;
+	if (size == 2)
+		tmp->next = NULL;
+	else
+		tmp->next = tmp->next->next;
+	(*lst)->next = tmp;
 	if (i)
 		printf("sb\n");
 	return (0);
