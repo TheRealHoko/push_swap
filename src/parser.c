@@ -6,7 +6,7 @@
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 17:12:59 by jzeybel           #+#    #+#             */
-/*   Updated: 2021/11/13 18:10:12 by jzeybel          ###   ########.fr       */
+/*   Updated: 2021/12/13 18:54:28 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	checker(char **av)
 	while (av[++j] != 0)
 	{
 		i = 0;
-		if (!(ft_atoll(av[j]) < INT_MAX))
+		if (!(ft_atoll(av[j]) < INT_MAX) || !(av[j][0]))
 			return (0);
 		while (av[j][i] != 0)
 		{

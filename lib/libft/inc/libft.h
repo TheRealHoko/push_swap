@@ -6,7 +6,7 @@
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 18:10:10 by jzeybel           #+#    #+#             */
-/*   Updated: 2021/11/15 16:13:25 by jzeybel          ###   ########.fr       */
+/*   Updated: 2021/12/13 17:42:04 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void				ft_lstadd_back(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
-void    			ft_lstprint(t_list *lst, char *param);
+void    			ft_lstprint(t_list *lst, char *param, char *sep);
 void				ft_del(void *data);
 int					ft_lstlencmp(t_list *lst);
 

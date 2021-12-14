@@ -2,3 +2,5 @@ barème
 *.o
 push_swap
 checker_linux
+pyviz.py
+.vscode

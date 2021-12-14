@@ -6,7 +6,7 @@
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 13:38:20 by jzeybel           #+#    #+#             */
-/*   Updated: 2021/11/29 17:09:26 by jzeybel          ###   ########.fr       */
+/*   Updated: 2021/12/14 14:58:57 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,20 +29,17 @@ int	init_stack(t_stack *);
 int	alloc_stack(t_list **lst, int size);
 int	create_stack(t_list *lst, char **av);
 void	*ft_alloc_int(void);
-int		ft_sa(t_list **lst, int i);
-int		ft_sb(t_list **lst, int i);
+int		ft_swap(t_list **lst, char i);
 void	ft_ss(t_stack *stack);
-void	ft_pa(t_list **lsta, t_list **lstb);
-void	ft_pb(t_list **lstb, t_list **lsta);
-int		ft_ra(t_list **lst, int i);
-int		ft_rb(t_list **lst, int i);
+void	ft_push(t_list **to, t_list **from, char i);
+int		ft_rotate(t_list **lst, char i);
 void	ft_rr(t_stack *stack);
-int		ft_rra(t_list **lst, int i);
-int		ft_rrb(t_list **lst, int i);
+int		ft_rrotate(t_list **lst, char i);
 void	ft_rrr(t_stack *stack);
-int     ft_issorted(t_list *lst, int range);
-int     ft_easysort(t_stack *stack);
-int		ft_timsort(t_stack *stack, int size);
-int     ft_insertion_sort(t_stack *stack);
+int		ft_issorted(t_list *lst, int range);
+int		ft_twosort(t_list **lst, char x);
+int		ft_threesort(t_list **lst, char x);
+int		ft_fivesort(t_stack *stack, int size);
+int		ft_sort(t_stack *stack, int ac);
 
 #endif
