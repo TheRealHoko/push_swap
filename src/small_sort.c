@@ -6,20 +6,20 @@
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 23:17:13 by jzeybel           #+#    #+#             */
-/*   Updated: 2022/01/06 14:56:10 by jzeybel          ###   ########.fr       */
+/*   Updated: 2022/01/29 21:40:38 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		ft_twosort(t_list **lst, char x)
+int	ft_twosort(t_list **lst, char x)
 {
 	if (*(int *)(*lst)->data > *(int *)(*lst)->next->data)
 		ft_swap(lst, x);
 	return (0);
 }
 
-int		ft_threesort(t_list **lst, char x)
+int	ft_threesort(t_list **lst, char x)
 {
 	int	i;
 	int	j;
@@ -47,7 +47,7 @@ int		ft_threesort(t_list **lst, char x)
 	return (0);
 }
 
-int		ft_fivesort(t_stack *stack, int size)
+int	ft_fivesort(t_stack *stack, int size)
 {
 	int	i;
 

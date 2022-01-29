@@ -18,7 +18,11 @@ SRC =	main.c \
 		big_sort.c \
 		sort.c \
 		sort_utils.c \
-		instructions/sa.c
+		sort_utils2.c \
+		instructions/swap.c \
+		instructions/push.c \
+		instructions/rotate.c \
+		instructions/rrotate.c \
 
 TMP = tmp
 

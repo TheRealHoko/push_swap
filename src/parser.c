@@ -6,7 +6,7 @@
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 17:12:59 by jzeybel           #+#    #+#             */
-/*   Updated: 2021/12/13 18:54:28 by jzeybel          ###   ########.fr       */
+/*   Updated: 2022/01/30 00:05:34 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ int	checker(char **av)
 			return (0);
 		while (av[j][i] != 0)
 		{
-			if (ft_isdigit(av[j][i]) || (av[j][0] == '-' && ft_isdigit(av[j][1+i])))
+			if (ft_isdigit(av[j][i]) \
+			|| (av[j][0] == '-' && ft_isdigit(av[j][1 + i])))
 				i++;
 			else
 				return (0);
@@ -60,11 +61,13 @@ int	cmp_doublons(int *data, int size)
 	{
 		j = i + 1;
 		while (j < size)
+		{
 			if (data[i] == data[j++])
 			{
 				free(data);
 				return (0);
 			}
+		}
 		i++;
 	}
 	free(data);
