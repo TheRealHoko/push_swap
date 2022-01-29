@@ -6,7 +6,7 @@
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 18:09:52 by jzeybel           #+#    #+#             */
-/*   Updated: 2021/03/19 18:06:01 by jzeybel          ###   ########.fr       */
+/*   Updated: 2022/01/29 01:34:26 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_islower(int c)
 	return (0);
 }
 
-int			ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (ft_islower(c) == 1)
 		return (c - 32);

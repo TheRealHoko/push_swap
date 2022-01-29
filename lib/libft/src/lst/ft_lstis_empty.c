@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_lstis_empty.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/17 18:09:40 by jzeybel           #+#    #+#             */
-/*   Updated: 2022/01/29 01:34:34 by jzeybel          ###   ########.fr       */
+/*   Created: 2022/01/03 17:48:34 by jzeybel           #+#    #+#             */
+/*   Updated: 2022/01/29 01:25:02 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isupper(int c)
+int	ft_lstis_empty(t_list *lst)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (1);
-	return (0);
-}
-
-int	ft_tolower(int c)
-{
-	if (ft_isupper(c) == 1)
-		return (c + 32);
-	return (c);
+	return (!lst);
 }

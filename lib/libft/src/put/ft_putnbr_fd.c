@@ -6,13 +6,13 @@
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 12:27:22 by jzeybel           #+#    #+#             */
-/*   Updated: 2021/03/19 18:06:01 by jzeybel          ###   ########.fr       */
+/*   Updated: 2022/01/28 02:46:31 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(long long int n, int fd)
+void	ft_putnbr_fd(long n, int fd)
 {
 	unsigned long long int	nn;
 

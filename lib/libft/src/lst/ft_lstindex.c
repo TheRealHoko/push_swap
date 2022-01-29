@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_lstindex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/17 18:09:40 by jzeybel           #+#    #+#             */
-/*   Updated: 2022/01/29 01:34:34 by jzeybel          ###   ########.fr       */
+/*   Created: 2021/12/14 17:08:36 by jzeybel           #+#    #+#             */
+/*   Updated: 2022/01/29 01:25:41 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isupper(int c)
+t_list	*ft_lstindex(t_list *lst, int index)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (1);
-	return (0);
-}
+	int		i;
+	t_list	*new;
 
-int	ft_tolower(int c)
-{
-	if (ft_isupper(c) == 1)
-		return (c + 32);
-	return (c);
+	i = -1;
+	new = lst;
+	if (index >= ft_lstsize(lst) || (index < 0))
+		return (new);
+	while (++i < index && new)
+		new = new->next;
+	return (new);
 }

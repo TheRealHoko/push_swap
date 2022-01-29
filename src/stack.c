@@ -6,7 +6,7 @@
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 20:19:59 by jzeybel           #+#    #+#             */
-/*   Updated: 2021/11/24 21:12:45 by jzeybel          ###   ########.fr       */
+/*   Updated: 2022/01/26 16:53:29 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ void	*ft_alloc_int(void)
 
 int	alloc_stack(t_list **lst, int size)
 {
+	if (!size)
+		return (1);
 	while (size--)
 		ft_lstadd_back(lst, ft_lstnew(ft_alloc_int()));
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 18:10:10 by jzeybel           #+#    #+#             */
-/*   Updated: 2021/12/13 17:42:04 by jzeybel          ###   ########.fr       */
+/*   Updated: 2022/01/29 01:23:54 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,27 +25,25 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-# define ABS(value) (value > 0) ? value : -value
-# define SIGN(value) (value > 0) ? 1 : -1
-typedef struct		s_list
+typedef struct s_list
 {
 	void			*data;
 	struct s_list	*next;
-}					t_list;
+}				t_list;
 
-t_list				*ft_lstnew(void	*data);
+t_list				*ft_lstnew(void *data);
 t_list				*ft_lstlast(t_list *lst);
-t_list				*ft_lstmap(t_list *lst, void *(*f)(void *), \
-					void (*del)(void*));
 void				ft_lstadd_front(t_list **alst, t_list *new);
 int					ft_lstsize(t_list *lst);
 void				ft_lstadd_back(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
-void    			ft_lstprint(t_list *lst, char *param, char *sep);
+void				ft_lstprint(t_list *lst, char *param, char *sep);
 void				ft_del(void *data);
 int					ft_lstlencmp(t_list *lst);
+t_list				*ft_lstindex(t_list *lst, int index);
+int					ft_lstis_empty(t_list *lst);
 
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
@@ -55,8 +53,8 @@ void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t				ft_strlen(const char *s);
-size_t 				ft_tablen(char **tab);
-void    			ft_free(void **data);
+size_t				ft_tablen(char **tab);
+void				ft_free(void **data);
 
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
@@ -90,14 +88,15 @@ char				*ft_strtrim(char const *s1, char const *set);
 void				ft_putchar_fd(char c, int fd);
 int					ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
-void				ft_putnbr_fd(long long int n, int fd);
+void				ft_putnbr_fd(long n, int fd);
 void				ft_putbase_fd(unsigned long n, char *base, \
 						size_t size, int fd);
 char				*ft_foreach(char const *s, char (*f)(unsigned int, char));
-char				*ft_lltoa(long long n);
-char				*ft_ulltoa_base(unsigned long long n, char *base);
+char				*ft_lltoa(long n);
+char				*ft_ulltoa_base(long n, char *base);
 char				**ft_split(char const *s, char *c);
-size_t 				ft_freetab(char **tab, size_t size);
+size_t				ft_freetab(char **tab, size_t size);
 
 long				ft_pow(int base, int exponent);
+int					ft_round(float f);
 #endif

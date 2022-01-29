@@ -6,7 +6,7 @@
 #    By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/17 18:10:22 by jzeybel           #+#    #+#              #
-#    Updated: 2021/04/21 19:12:01 by jzeybel          ###   ########.fr        #
+#    Updated: 2022/01/29 01:24:05 by jzeybel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ TMP = tmp
 SRC_DIR = src
 
 SRC = math/ft_pow.c \
+	  math/ft_round.c \
 	  std/ft_atoll.c \
 	  std/ft_calloc.c \
 	  std/ft_lltoa.c \
@@ -76,9 +77,10 @@ SRC = math/ft_pow.c \
 	  lst/ft_lstiter.c \
 	  lst/ft_lstdelone.c \
 	  lst/ft_lstclear.c \
-	  lst/ft_lstmap.c \
 	  lst/ft_lstprint.c \
 	  lst/ft_lstlencmp.c \
+	  lst/ft_lstindex.c \
+	  lst/ft_lstis_empty.c \
 	  lst/ft_del.c \
 
 OBJ = $(addprefix $(TMP)/,$(SRC:.c=.o))

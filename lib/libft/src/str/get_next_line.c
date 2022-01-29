@@ -6,7 +6,7 @@
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 13:52:43 by jzeybel           #+#    #+#             */
-/*   Updated: 2021/04/18 01:28:54 by jzeybel          ###   ########.fr       */
+/*   Updated: 2022/01/28 03:11:47 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static int	readline(int newline, char **buffer, char **line)
 	return (1);
 }
 
-int			get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
 	static char	*buffer[FD];
 	char		buf[BUFFER_SIZE];

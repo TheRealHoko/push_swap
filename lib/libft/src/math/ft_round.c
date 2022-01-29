@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_handling.c                                   :+:      :+:    :+:   */
+/*   ft_round.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/13 19:08:09 by jzeybel           #+#    #+#             */
-/*   Updated: 2021/11/13 19:19:00 by jzeybel          ###   ########.fr       */
+/*   Created: 2022/01/13 19:32:59 by jzeybel           #+#    #+#             */
+/*   Updated: 2022/01/13 20:41:11 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	error_handling(int errno, t_stack stacks)
+int	ft_round(float f)
 {
-	(void)stacks;
-	if (errno == 1)
-	{
+	int	i;
 
-		return (1);
-	}
-	return(0);
+	i = (int)f;
+	if ((f - i) > 0.5)
+		return (i + 1);
+	else
+		return (i);
 }

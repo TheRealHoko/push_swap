@@ -6,13 +6,13 @@
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 12:49:44 by jzeybel           #+#    #+#             */
-/*   Updated: 2021/04/15 18:52:35 by jzeybel          ###   ########.fr       */
+/*   Updated: 2022/01/28 03:16:25 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strchri(char *s, int c)
+int	ft_strchri(char *s, int c)
 {
 	int	i;
 

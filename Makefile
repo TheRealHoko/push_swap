@@ -14,8 +14,10 @@ LIB = -L./lib/libft -lft
 SRC =	main.c \
 		parser.c \
 		stack.c \
+		small_sort.c \
+		big_sort.c \
 		sort.c \
-		error_handling.c \
+		sort_utils.c \
 		instructions/sa.c
 
 TMP = tmp
@@ -41,7 +43,7 @@ debug : CFLAGS += -g -fsanitize=address
 debug : DBRULE += debug
 debug : re
 debug :
-	./push_swap 1
+	./push_swap 6 9 3 56 89 84 55 21 54 47 58
 
 clean :
 	rm -rf $(TMP)

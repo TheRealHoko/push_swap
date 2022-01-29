@@ -6,33 +6,63 @@
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 18:02:53 by jzeybel           #+#    #+#             */
-/*   Updated: 2021/03/19 18:06:01 by jzeybel          ###   ########.fr       */
+/*   Updated: 2022/01/29 02:07:36 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_lltoa(long long n)
+static int	signcond(long n)
+{
+	if (n < 0)
+		return (-1);
+	else
+		return (1);
+}
+
+static int	sizecond(long n)
+{
+	if (n < 0)
+		return (2);
+	else
+		return (1);
+}
+
+static void	assignvals(int *sign, int *size, long *n, long *p)
+{
+	*sign = signcond(*n);
+	*size = sizecond(*n);
+	*p = 10;
+	*n /= 10;
+	while (*n)
+	{
+		*p = *p * 10;
+		(*size)++;
+		*n /= 10;
+	}
+}
+
+char	*ft_lltoa(long n)
 {
 	int					sign;
 	int					size;
 	static char			array[50];
-	unsigned long long	nn;
-	unsigned long long	p;
+	long				nn;
+	long				p;
 
-	sign = (n < 0) ? -1 : 1;
-	size = (n < 0) ? 2 : 1;
 	nn = n;
-	p = 10;
-	while (n /= 10)
-	{
-		p = p * 10;
-		size++;
-	}
+	assignvals(&sign, &size, &n, &p);
 	nn *= sign;
-	size = (sign < 0) ? 1 : 0;
-	while (p /= 10)
+	if (sign < 0)
+		size = 1;
+	else
+		size = 0;
+	p /= 10;
+	while (p)
+	{
 		array[size++] = ((nn / p) % 10) + '0';
+		p /= 10;
+	}
 	if (sign == -1)
 		array[0] = '-';
 	array[size] = 0;

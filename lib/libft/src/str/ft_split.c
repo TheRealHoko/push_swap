@@ -6,7 +6,7 @@
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 17:57:34 by jzeybel           #+#    #+#             */
-/*   Updated: 2021/04/19 15:06:34 by jzeybel          ###   ########.fr       */
+/*   Updated: 2022/01/28 03:12:24 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static char	**free_tab(char **tab, int i)
 	return (NULL);
 }
 
-char		**ft_split(char const *s, char *delim)
+char	**ft_split(char const *s, char *delim)
 {
 	int		i;
 	int		k;

@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free.c                                          :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/22 23:30:48 by jzeybel           #+#    #+#             */
-/*   Updated: 2021/04/12 18:16:22 by jzeybel          ###   ########.fr       */
+/*   Created: 2022/01/28 03:09:07 by jzeybel           #+#    #+#             */
+/*   Updated: 2022/01/28 03:09:14 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_free(void **data)
+void	ft_free(void **data)
 {
-    if (data && *data)
-    {
-        free(*data);
-        *data = NULL;
-    }
+	if (data && *data)
+	{
+		free(*data);
+		*data = NULL;
+	}
 }

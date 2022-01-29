@@ -6,7 +6,7 @@
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 18:07:21 by jzeybel           #+#    #+#             */
-/*   Updated: 2021/03/22 22:12:20 by jzeybel          ###   ########.fr       */
+/*   Updated: 2022/01/12 19:34:52 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ int	ft_lstsize(t_list *lst)
 	int	i;
 
 	i = 0;
-	while (lst != NULL)
+	while (lst)
 	{
-		lst = lst->next;
 		i++;
+		lst = lst->next;
 	}
 	return (i);
 }
