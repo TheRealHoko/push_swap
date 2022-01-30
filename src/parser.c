@@ -6,7 +6,7 @@
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 17:12:59 by jzeybel           #+#    #+#             */
-/*   Updated: 2022/01/30 00:05:34 by jzeybel          ###   ########.fr       */
+/*   Updated: 2022/01/30 20:18:56 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	checker(char **av)
 	int	j;
 
 	j = 0;
-	while (av[++j] != 0)
+	while (av[j] != 0)
 	{
 		i = 0;
 		if (!(ft_atoll(av[j]) < INT_MAX) || !(av[j][0]))
@@ -31,6 +31,7 @@ int	checker(char **av)
 			else
 				return (0);
 		}
+		j++;
 	}
 	return (1);
 }
@@ -44,8 +45,8 @@ int	init_doublons(char **av, int size)
 	tmp = malloc(sizeof(int) * size);
 	if (!tmp)
 		return (0);
-	while (*(++av) != 0)
-		tmp[i++] = ft_atoll(*av);
+	while (*av != 0)
+		tmp[i++] = ft_atoll(*av++);
 	if (!cmp_doublons(tmp, size))
 		return (0);
 	return (1);

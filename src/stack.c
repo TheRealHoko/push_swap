@@ -6,7 +6,7 @@
 /*   By: jzeybel <jzeybel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 20:19:59 by jzeybel           #+#    #+#             */
-/*   Updated: 2022/01/26 16:53:29 by jzeybel          ###   ########.fr       */
+/*   Updated: 2022/01/30 20:24:14 by jzeybel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ int	create_stack(t_list *lst, char **av)
 {
 	int	i;
 
-	while (*(++av))
+	while (*av)
 	{
-		i = ft_atoll(*av);
+		i = ft_atoll(*av++);
 		ft_memcpy(lst->data, &i, sizeof(int));
 		lst = lst->next;
 	}
